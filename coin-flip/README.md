@@ -45,7 +45,7 @@ bool side = coinFlip == 1 ? true : false;
 
 Luckly the value of `FACTOR` is known and the value of `blockValue` can be obtained easily using a library like `web3.js` or simply using a solidity smart contract. We are going to use the later in this case.
 
-First of all get a new instance of the level and save the instance address. Then go to Remix IDE and copy and paste the code from [CoinflipGuesser]() and deploy it with the instance address as a parameter. Then use the `hax()` function from the [CoinflipGuesser]() to always guess correctly. We can do this only once per block because of this code 
+First of all get a new instance of the level and save the instance address. Then go to Remix IDE and copy and paste the code from [CoinflipGuesser](CoinflipGuesser.sol) and deploy it with the instance address as a parameter. Then use the `hax()` function from the [CoinflipGuesser](CoinflipGuesser.sol) to always guess correctly. We can do this only once per block because of this code 
 
 ```
 if (lastHash == blockValue) {
