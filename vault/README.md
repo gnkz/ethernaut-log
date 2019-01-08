@@ -24,20 +24,30 @@ contract Vault {
 
 In order to beat this challenge we need to set the `locked` variable to false.
 To do this we need to call the `unlock` function with the correct `password`.
-Notice that the `password` variable is set on the `constructor` of the contract,
-so we can get the contract creation transaction and get the data payload that
-was used. The data payload used to create the contract was
+As you know ethereum is a public blockchain and because of this using the
+correct tools we can read the state of a contract. Marking a variable as private
+doesn't prevent us to read it from the state.
+
+To read the storage we are going to use [ethers.js](https://github.com/ethers-io/ethers.js/).
+The script can be found in [index.js](index.js) but the important piece of code
+is
 
 ```
-0xdfc86b17000000000000000000000000e77b0bea3f019b1df2c9663c823a2ae65afb6a5f
+  const stored = await provider.getStorageAt(target, 1);
 ```
 
-The first 4 bytes of this data payload correspond to a function identifier while
-the rest of it should be the `password` variable.
+With this code we are reading the second storage variable (0 would be the first)
+in the target contract.
+
+The result is
+
+```
+0x412076657279207374726f6e67207365637265742070617373776f7264203a29
+```
 
 To solve the challenge call
 
 ```
-contract.unlock("0x000000000000000000000000e77b0bea3f019b1df2c9663c823a2ae65afb6a5f")
+contract.unlock("0x412076657279207374726f6e67207365637265742070617373776f7264203a29")
 ```
 
