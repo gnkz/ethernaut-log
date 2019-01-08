@@ -56,4 +56,4 @@ gas available and `partner.call.value(amountToSend)();` is
 not using a gas limit, so the fallback function will receive
 all the gas. Then generating an `assert` exception will
 consume all the gas and this will prevent that any code after
-this will be run`. The contract used was [Attack](Attack.sol).
+this will be run. The contract used was [Attack](Attack.sol).
