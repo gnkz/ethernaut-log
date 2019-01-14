@@ -33,7 +33,7 @@ The script can be found in [index.js](index.js) but the important piece of code
 is
 
 ```
-  const stored = await provider.getStorageAt(target, 1);
+  const stored = await provider.getStorageAt(target, slot);
 ```
 
 With this code we are reading the second storage variable (0 would be the first)

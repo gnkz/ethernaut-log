@@ -13,8 +13,9 @@ const start = async () => {
   }
 
   const target = args[2];
+  const storage = args[3] || "0";
 
-  const stored = await provider.getStorageAt(target, 1);
+  const stored = await provider.getStorageAt(target, storage);
   console.log(stored);
 }
 
