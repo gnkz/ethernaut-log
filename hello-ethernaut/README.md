@@ -2,7 +2,7 @@
 
 To solve this level we can view the contract source [here](https://github.com/OpenZeppelin/ethernaut/blob/6ec165f199d8db65ba32c0b5b3519e5481b66af3/contracts/levels/Instance.sol).
 
-Notice that to changle the `cleared` variable we need to call the `authenticate` method with the correct passphrase.
+Notice that to change the `cleared` variable we need to call the `authenticate` method with the correct passphrase.
 
 ```
 function authenticate(string passkey) public {
